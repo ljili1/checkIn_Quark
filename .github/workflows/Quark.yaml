@@ -16,11 +16,11 @@ jobs:
             TG_USER_ID: ${{ secrets.TG_USER_ID }}
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
             - name: "初始化Python"
-              uses: actions/setup-python@v4
+              uses: actions/setup-python@v5
               with:
-                  python-version: '3.8'
+                  python-version: '3.x'
             - name: "安装依赖包"
               run: pip install -r ./requirements.txt
             - name: "运行 Quark签到"
@@ -32,4 +32,3 @@ jobs:
                   repository: ${{ github.repository }}
                   retain_days: 0
                   keep_minimum_runs: 10
-            
